@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("MyActivity", "Inside onClick()");
+               Log.i("MyActivity", "Inside onClick()");
+                Toast.makeText(MainActivity.this, "Sending Message...", Toast.LENGTH_LONG).show();
                 if (cbEnabled.isChecked()) {
                     tvShow.setText("The discount is given");
                 } else {
@@ -39,14 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        btnCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Sending Message...", Toast.LENGTH_LONG).show();
-
-            }
-        });
-
 
         btnCheck.setOnClickListener(new View.OnClickListener() {
             private double calcPay(double price, double discount) {
@@ -55,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onClick(View v) {
+                Log.i("My Activity","Inside onClick");
                 if (cbEnabled.isChecked()) {
                     double pay = calcPay(100, 20);
                     tvShow.setText("The discount is given. You need to pay " + pay);
